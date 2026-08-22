@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Cartographie sanitaire — Afrique de l'Ouest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #f1efe4;
+    --bg-card: #ffffff;
+    --ink: #202b26;
+    --ink-soft: #55645c;
+    --ink-faint: #8a978d;
+    --line: #cdc8b3;
+    --accent: #2a78d6;
+    --accent-soft: #dce8f8;
+    --shadow: 0 10px 30px -12px rgba(32,43,38,0.25);
+    --font-display: "Fraunces", Georgia, serif;
+    --font-body: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #172321; --bg-card: #1e2c29; --ink: #eef0e8; --ink-soft: #b7c2b7;
+      --ink-faint: #798a80; --line: #34453e; --accent: #6da7ec; --accent-soft: #24343f;
+      --shadow: 0 10px 30px -12px rgba(0,0,0,0.5);
+    }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink); font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased;
+  }
+  main{ max-width:920px; margin:0 auto; padding:56px 24px 80px; }
+  header{ margin-bottom:40px; }
+  h1{
+    font-family:var(--font-display); font-weight:600; font-size:clamp(28px,4vw,40px);
+    margin:0 0 10px; letter-spacing:-0.01em; text-wrap:balance;
+  }
+  header p{ margin:0; color:var(--ink-soft); font-size:16px; max-width:62ch; line-height:1.55; }
+  .grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .card{
+    display:block; background:var(--bg-card); border:1px solid var(--line); border-radius:14px;
+    padding:22px 24px; text-decoration:none; color:inherit; box-shadow:var(--shadow);
+    transition:transform 0.15s ease, border-color 0.15s ease;
+  }
+  .card:hover{ transform:translateY(-2px); border-color:var(--accent); }
+  .card .eyebrow{
+    font-family:var(--font-mono); font-size:11.5px; text-transform:uppercase; letter-spacing:0.07em;
+    color:var(--accent); margin-bottom:8px; display:block;
+  }
+  .card h2{ font-family:var(--font-display); font-weight:600; font-size:19px; margin:0 0 6px; }
+  .card p{ margin:0; color:var(--ink-soft); font-size:14px; line-height:1.5; }
+  footer{ margin-top:48px; font-size:12.5px; color:var(--ink-faint); border-top:1px solid var(--line); padding-top:16px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Cartographie des structures sanitaires — Afrique de l'Ouest</h1>
+    <p>Togo, Bénin, Burkina Faso et Ghana. Cinq cartes interactives : la localisation des structures sanitaires, et leur densité pour 100&nbsp;000 habitants selon deux découpages administratifs et deux sources de données.</p>
+  </header>
+
+  <div class="grid">
+    <a class="card" href="./carte-structures-osm.html">
+      <span class="eyebrow">Carte 1 — points</span>
+      <h2>Structures sanitaires (OpenStreetMap)</h2>
+      <p>Localisation individuelle de 5&nbsp;789 structures — hôpitaux, cliniques, pharmacies, cabinets médicaux, dentistes.</p>
+    </a>
+
+    <a class="card" href="./carte-densite-region-osm.html">
+      <span class="eyebrow">Carte 2 — densité · région · OSM</span>
+      <h2>Densité par région (OpenStreetMap)</h2>
+      <p>50 régions/départements. Toutes structures cartographiées sur OpenStreetMap, toutes sources confondues.</p>
+    </a>
+
+    <a class="card" href="./carte-densite-region-officielle.html">
+      <span class="eyebrow">Carte 3 — densité · région · officielle</span>
+      <h2>Densité par région (sources officielles)</h2>
+      <p>50 régions/départements. Structures publiques uniquement, d'après les rapports OMS/gouvernements.</p>
+    </a>
+
+    <a class="card" href="./carte-densite-prefecture-osm.html">
+      <span class="eyebrow">Carte 4 — densité · préfecture · OSM</span>
+      <h2>Densité par préfecture (OpenStreetMap)</h2>
+      <p>424 préfectures/communes/provinces/districts. Toutes structures cartographiées sur OpenStreetMap.</p>
+    </a>
+
+    <a class="card" href="./carte-densite-prefecture-officielle.html">
+      <span class="eyebrow">Carte 5 — densité · préfecture · officielle</span>
+      <h2>Densité par préfecture (sources officielles)</h2>
+      <p>80 unités. Structures publiques uniquement, d'après les rapports OMS/gouvernements.</p>
+    </a>
+  </div>
+
+  <footer>GEO_Example — projet pilote de cartographie sanitaire régionale.</footer>
+</main>
+</body>
+</html>
